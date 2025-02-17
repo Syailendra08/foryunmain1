@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Scrapbook</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #ffccff; text-align: center; overflow: hidden; }
+        .container { position: relative; width: 80%; max-width: 600px; }
+        .slide { display: none; justify-content: center; align-items: center; flex-direction: column; }
+        .active { display: flex; }
+        .slide-flex { flex-direction: row; text-align: left; }
+        .slide-flex .text-container { max-width: 60%; }
+        img { width: 200px; margin-left: 20px; }
+        .text { font-size: 18px; color: #3d3c3c; }
+        .textage { font-size: 27px; color: #3d3c3c; }
+        .text-container h2 { font-size: 24px; margin-bottom: 10px; color: #525151; }
+        button { margin-top: 20px; padding: 10px 20px; font-size: 16px; border: none; background: #ff66b2; color: white; cursor: pointer; border-radius: 10px; }
+        button:hover { background: #f579ab; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <audio id="loveSong" src="GANGGA - Blue Jeans (Official Lyric Video).mp3"></audio>
+    
+    <div class="container">
+        <div class="slide active">
+            <p class="text">Hey, it's your birthday!</p>
+            <img src="Screenshot 2025-02-17 194110.jpg" alt="Birthday Cake">
+        </div>
+        <div class="slide">
+            <img src="Ayunda.jpeg" alt="Birthday Cake"> <br>
+            <p class="textage">HAPPY 15th BIRTHDAY SAYANGG!</p> <br>
+            <p class="text">Dear Elsa Prima Ayunda My lovely person, on this special day, I just want to say how amazing you are. You bring so much joy and happiness to those around you including me. I Wish you have a wonderful year ahead filled with love, success, and I hope we always be together okay?? Happy birthday babee!</p>
+        </div>
+        <div class="slide slide-flex">
+            <div class="text-container">
+                <h2>My Favorite Moment This Year</h2>
+                <p class="text">It's been an incredible year filled with unforgettable moments, and this one is My favorite moment! it was when we ate at the Glass House it felt like the most romantic place I've ever been with you. You looked incredibly beautiful there, seriously, babe, in my eyes, you were the most beautiful person in that place. Even though it was expensive, it was such a precious moment, especially being able to fine dine with my favorite person. Thank you so much, I was really happy to go on a date with you here. Happy Birthday again, love! I hope we can go fine dining again someday.</p>
+            </div>
+            <img src="WhatsApp Image 2025-02-17 at 7.33.51 PM.jpeg" alt="Favorite Moment">
+        </div>
+        <div class="slide slide-flex">
+            <div class="text-containerlove">
+                <h2>The Reason I Love You</h2>
+                <p class="text">I love you so much because you make me feel so comfortable. You are kind, you are perfect for me, and you are so beautiful. Even a million words can't explain how perfect you are.
+
+                    I love you because you love me.
+                    I love you when you compliment me.
+                    I love you just for being you.
+                    I love you when you are proud to have me, even with my flaws.
+                    I love you because you are pretty as always hehe.
+                    I love you when you hold my hand.
+                    I love you when you hug me.
+                    
+                    I just love you, always!!!</p>
+            </div>
+            <img src="Photobox.jpeg" alt="Love Reason">
+        </div>
+        <div class="slide slide-flex">
+            <div class="text-container">
+                <h2>What I Wish for This Year</h2>
+                <p class="text">My wish is only one. I hope we can always be together and keep going on adventures together. I just want one thing: as long as I'm with you, I will always be happy. I don't care about the challenges this year might bring, because all I want is to be with you every day, until the future comes. I love you so much, Yun. You always make me feel comfortable and loved. Thank you :((</p>
+            </div>
+            <img src="us.jpeg" alt="Wishes">
+            <a href="https://syailendra08.github.io/foryun/"><button>Go to Next Page</button></a>
+        </div>
+        <button id="nextBtn" onclick="nextSlide()">Next</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const nextBtn = document.getElementById("nextBtn");
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove("active");
+            currentSlide++;
+
+            if (currentSlide < slides.length) {
+                slides[currentSlide].classList.add("active");
+            }
+
+            if (currentSlide === slides.length - 1) {
+                nextBtn.classList.add("hidden");
+            }
+            let music = document.getElementById('loveSong');
+            music.play();
+        }
+    </script>
+</body>
+</html>
